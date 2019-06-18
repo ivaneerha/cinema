@@ -1,4 +1,4 @@
-package com.cinema.arena.cinemas.services;
+package com.cinema.arena.cinemas.service;
 
 import com.cinema.arena.cinemas.model.Cinema;
 import com.cinema.arena.cinemas.repository.CinemaRepository;
@@ -13,7 +13,7 @@ public class CinemaService {
     @Autowired
     private CinemaRepository cinemaRepository;
 
-    public Cinema getCinemaById(String id){
+    public Cinema getCinemaById(Long id){
         Optional<Cinema> cinema = cinemaRepository.findById(id);
 
         if (cinema.isEmpty()) {
