@@ -1,11 +1,14 @@
 package com.cinema.arena.users.model;
 
+import com.cinema.arena.locations.Model.Location;
+import com.cinema.arena.tickets.model.Ticket;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NonNull;
 import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @Builder
@@ -44,5 +47,11 @@ public class User {
     @NonNull
     private boolean isAdmin;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "location_id")
+    private Location location;
+
+    @OneToMany(mappedBy="user")
+    private Set<Ticket> tickets;
 
 }

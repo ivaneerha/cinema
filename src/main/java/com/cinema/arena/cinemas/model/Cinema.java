@@ -1,13 +1,16 @@
 package com.cinema.arena.cinemas.model;
 
+import com.cinema.arena.halls.model.Hall;
+import com.cinema.arena.locations.Model.Location;
+import com.cinema.arena.projections.model.Projection;
+import com.cinema.arena.tickets.model.Ticket;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.lang.NonNull;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @Builder
@@ -16,16 +19,22 @@ import java.util.List;
 public class Cinema {
 
     @Id
+    @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long cinemaId;
+    private Long id;
 
     @NonNull
     private String name;
     @NonNull
     private String contact;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "location_id")
+    private Location location;
 
-//    @NotNull
-//    @OneToMany(fetch = FetchType.EAGER)
-//    private List<Object> projections;
+    @ManyToMany(mappedBy = "cinemas")
+    private Set<Projection> projections = new HashSet<>();
+
+    @OneToMany(mappedBy="cinema")
+    private Set<Hall> halls;
 }

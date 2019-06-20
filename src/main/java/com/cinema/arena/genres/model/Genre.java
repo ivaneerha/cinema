@@ -1,11 +1,14 @@
 package com.cinema.arena.genres.model;
 
+import com.cinema.arena.movies.model.Movie;
+import com.cinema.arena.tickets.model.Ticket;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NonNull;
 import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @Builder
@@ -19,4 +22,7 @@ public class Genre {
     @NonNull
     @UniqueElements
     private String name;
+
+    @OneToMany(mappedBy="genre")
+    private Set<Movie> movies;
 }
