@@ -1,9 +1,8 @@
 package com.cinema.arena.cinemas.model;
 
 import com.cinema.arena.halls.model.Hall;
-import com.cinema.arena.locations.Model.Location;
+import com.cinema.arena.locations.model.Location;
 import com.cinema.arena.projections.model.Projection;
-import com.cinema.arena.tickets.model.Ticket;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.lang.NonNull;

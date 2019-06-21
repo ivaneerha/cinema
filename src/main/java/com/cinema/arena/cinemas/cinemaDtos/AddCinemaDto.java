@@ -1,4 +1,4 @@
-package com.cinema.arena.cinemas.CinemaDtos;
+package com.cinema.arena.cinemas.cinemaDtos;
 
 import lombok.Getter;
 import lombok.Setter;

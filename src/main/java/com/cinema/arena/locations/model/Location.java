@@ -1,4 +1,4 @@
-package com.cinema.arena.locations.Model;
+package com.cinema.arena.locations.model;
 
 import com.cinema.arena.cinemas.model.Cinema;
 import com.cinema.arena.users.model.User;

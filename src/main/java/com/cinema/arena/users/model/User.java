@@ -1,18 +1,15 @@
 package com.cinema.arena.users.model;
-
-import com.cinema.arena.locations.Model.Location;
+import com.cinema.arena.locations.model.Location;
 import com.cinema.arena.tickets.model.Ticket;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NonNull;
-import org.hibernate.validator.constraints.UniqueElements;
-
+import lombok.*;
 import javax.persistence.*;
 import java.util.Set;
 
 @Data
 @Builder
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "users")
 public class User {
 
@@ -26,18 +23,18 @@ public class User {
     @NonNull
     private String lastName;
 
-    @UniqueElements
+    @Column(unique=true)
     private String gsm;
 
     @NonNull
     private String password;
 
     @NonNull
-    @UniqueElements
+    @Column(unique=true)
     private String email;
 
     @NonNull
-    @UniqueElements
+    @Column(unique=true)
     private String username;
 
     private String favouriteMovie;

@@ -1,6 +1,6 @@
 package com.cinema.arena.cinemas.controller;
 
-import com.cinema.arena.cinemas.CinemaDtos.AddCinemaDto;
+import com.cinema.arena.cinemas.cinemaDtos.AddCinemaDto;
 import com.cinema.arena.cinemas.model.Cinema;
 import com.cinema.arena.cinemas.service.CinemaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +23,7 @@ public class CinemaController {
 
     @PostMapping("/cinema/add")
     public void addCinema(@RequestBody AddCinemaDto cinema, HttpServletRequest request, HttpSession session) {
+
     }
 
 }

@@ -1,22 +1,19 @@
-package com.cinema.arena.Helper;
+package com.cinema.common.exceptions;
+
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
 
-@RestController
-public abstract class BaseService {
+@ControllerAdvice
+public abstract class ExceptionHandlers {
 
-    @ExceptionHandler({ IllegalArgumentException.class })
+    @org.springframework.web.bind.annotation.ExceptionHandler({IllegalArgumentException.class})
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
-    public ErrorMessage NotLoggedIn(Exception e) {
+    public ErrorMessage notLoggedIn(Exception e) {
         ErrorMessage msg = new ErrorMessage(e.getMessage(), HttpStatus.UNAUTHORIZED.value(), LocalDateTime.now());
         return msg;
     }
-
-
-
 
 }

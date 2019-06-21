@@ -1,6 +1,6 @@
-package com.cinema.arena.locations.Service;
+package com.cinema.arena.locations.service;
 
-import com.cinema.arena.locations.Repository.LocationRepository;
+import com.cinema.arena.locations.repository.LocationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

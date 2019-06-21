@@ -1,10 +1,10 @@
-package com.cinema.arena.Helper;
-import java.time.LocalDateTime;
+package com.cinema.common.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.http.HttpStatus;
+
+import java.time.LocalDateTime;
 
 @Getter
 @Setter

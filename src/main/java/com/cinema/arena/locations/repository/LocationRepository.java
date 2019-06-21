@@ -1,6 +1,6 @@
-package com.cinema.arena.locations.Repository;
+package com.cinema.arena.locations.repository;
 
-import com.cinema.arena.locations.Model.Location;
+import com.cinema.arena.locations.model.Location;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
